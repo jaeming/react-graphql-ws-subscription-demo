@@ -7,23 +7,19 @@ export default function App() {
   
   useEffect(() => (
     subscribe(
-      { query: `subscription { downloadReady { id path name mimeType } }` }, 
-      ({ data: { downloadReady } }: any) => setMessages(m => [...m, downloadReady])
+      { query: `subscription { message }` }, 
+      ({ data: { message } }: any) => setMessages(m => [...m, message])
     )
   ), [])
 
-  const Message = ({name, id, path, mimeType}) => (
-    <li key={id}>
-      <p>{name}</p>
-      <small>id: {id}, type: {mimeType}</small>
-      <br/>
-      <img src={path} alt={name}/>
+  const Message = (msg) => (
+    <li key={msg}>
+      {msg}
     </li>
   )
 
   return (
     <div>
-      <h3>client test</h3>
       <ul>{ messages.map(Message) }</ul>
     </div>
   )

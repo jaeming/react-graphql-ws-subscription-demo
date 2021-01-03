@@ -1,6 +1,6 @@
 import { createClient } from 'graphql-ws'
 
-const client = createClient({url: 'ws://localhost:4000/graphql'})
+const client = createClient({url: `ws://localhost:4000/graphql`})
 
 export function subscribe(payload, cb) {
   client.subscribe(payload, {

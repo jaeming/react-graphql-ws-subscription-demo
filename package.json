@@ -18,8 +18,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "dev": "API_PORT=4000 PORT=3001 react-scripts start",
-    "dev2": "API_PORT=4002 PORT=3002 react-scripts start",    
+    "dev": "npm start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
